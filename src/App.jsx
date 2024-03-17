@@ -6,6 +6,8 @@ import Header from "./components/Header.jsx";
 import Stake from "./components/Stake.jsx";
 import AppTabs from "./components/AppTabs";
 import Unstake from "./components/Unstake.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Stats from "./components/Stats";
 import Balance from "./components/Balance";
 
@@ -13,8 +15,9 @@ configureWeb3Modal();
 function App() {
   return (
     <>
-      <Container>
+      <Container className="bg-[#121212]">
         <Header />
+
         <Flex gap="4">
           <Box>
             <Stats className="mt-5" />
@@ -23,6 +26,7 @@ function App() {
 
           <AppTabs Stake={<Stake />} Unstake={<Unstake />} />
         </Flex>
+        <ToastContainer />
       </Container>
     </>
   );

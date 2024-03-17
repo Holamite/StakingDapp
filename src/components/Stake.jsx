@@ -5,12 +5,7 @@ const Stake = () => {
   const [amount, setAmount] = useState(0);
 
   return (
-    <Card
-      size="2"
-      style={{ width: 500, height: 500 }}
-      align="center"
-      justify="center"
-    >
+    <Card size="2" style={{ width: 500, height: 500 }}>
       <Flex gap="" align="center">
         <Box width={"100%"}>
           <Flex justify={"between"} align={"center"}>
@@ -24,7 +19,7 @@ const Stake = () => {
             />
             <button
               className="text-white bg-blue-600 py-1 px-4 rounded-md"
-              // onClick={() => handleVote(id)}
+              onClick={() => handleVote(id)}
             >
               Approve
             </button>
@@ -32,10 +27,6 @@ const Stake = () => {
           <Flex align="center">
             <Text>You will receive</Text>
             <Text>MONIE</Text>
-          </Flex>
-          <Flex align="center">
-            <Text>Staking APR</Text>
-            <Text>0.5% Daily</Text>
           </Flex>
         </Box>
       </Flex>
