@@ -1,9 +1,6 @@
 import { Card, Box, Flex, Button, Text, TextField } from "@radix-ui/themes";
 import useCreatePool from "../hooks/useCreatePool";
 import { useState } from "react";
-import usePools from "../hooks/UsePools";
-
-usePools;
 
 const CreatePool = () => {
   const [rate, setRate] = useState("");

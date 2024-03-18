@@ -1,10 +1,19 @@
-import { Box, Card, Flex, Text, Avatar } from "@radix-ui/themes";
+import { Box, Card, Flex, Text, Avatar, Button } from "@radix-ui/themes";
 import CreatePool from "./CreatePool";
 import useStakeBalance from "../hooks/useStakeBalance";
 import usePools from "../hooks/UsePools";
+import useStake from "../hooks/useStake";
+import { useState } from "react";
+import useUnstake from "../hooks/useUnstake";
 
 const Stats = () => {
   const poolID = usePools();
+  const [id, setId] = useState(0);
+  const handleStake = useStake(id);
+
+  const [index, setIndex] = useState(0);
+
+  const handleUntake = useUnstake(index);
 
   const amount = useStakeBalance();
   console.log(poolID);
@@ -21,7 +30,7 @@ const Stats = () => {
         ) : (
           poolIds.map((id) => {
             return (
-              <Card style={{ maxWidth: 600 }}>
+              <Card style={{ maxWidth: 600 }} key={id}>
                 <Flex gap="3" align="center">
                   <Avatar size="3" radius="full" fallback={id} />
                   <Box>
@@ -37,6 +46,11 @@ const Stats = () => {
                     </Text>
                   </Box>
                 </Flex>
+                <Button onClick={() => handleStake(setId(id))}> Stake </Button>
+                <Button onClick={() => handleUntake(setIndex(id))}>
+                  {" "}
+                  UnStake{" "}
+                </Button>
               </Card>
             );
           })
