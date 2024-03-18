@@ -15,7 +15,7 @@ configureWeb3Modal();
 function App() {
   return (
     <>
-      <Container className="bg-[#121212]">
+      <Container className="bg-[#7950f2]">
         <Header />
 
         <Flex gap="4">

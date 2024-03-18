@@ -8,12 +8,12 @@ import useUnstake from "../hooks/useUnstake";
 
 const Stats = () => {
   const poolID = usePools();
-  const [id, setId] = useState(0);
-  const handleStake = useStake(id);
+  // const [id, setId] = useState(0);
+  // const handleStake = useStake(id);
 
-  const [index, setIndex] = useState(0);
+  // const [index, setIndex] = useState(0);
 
-  const handleUntake = useUnstake(index);
+  // const handleUntake = useUnstake(index);
 
   const amount = useStakeBalance();
   console.log(poolID);
@@ -46,11 +46,11 @@ const Stats = () => {
                     </Text>
                   </Box>
                 </Flex>
-                <Button onClick={() => handleStake(setId(id))}> Stake </Button>
-                <Button onClick={() => handleUntake(setIndex(id))}>
+                {/* <Button onClick={() => handleStake(setId(id))}> Stake </Button> */}
+                {/* <Button onClick={() => handleUntake(setIndex(id))}>
                   {" "}
                   UnStake{" "}
-                </Button>
+                </Button> */}
               </Card>
             );
           })
